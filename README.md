@@ -1,2 +1,2 @@
 # canvas_ejemplo_basico
-Figura que canvia de tamaño, forma y color en Canvas.
+Figura que cambia de tamaño, forma y color en Canvas usando JS y JQuery.
