@@ -28,14 +28,16 @@ setInterval( () => {
 function colorAlter () {
 	let numero = 0;
 	numero = Math.floor(Math.random()*280);
-	console.log(numero);
 	return colores[numero];
 };
 
+//funcion para mostrar las cordenadas y canviar de color
 let lugar = (event)=> {
 	$("#xy").text(`El largo de la figura es:${event.pageX} y el ancho es:${event.pageY}`);
+	context.fillStyle = colorAlter();
 };
 
+//leyendo el canvas con un click
 $("#canvas").click(lugar);
 
 //arreglo con colores en hexadecimal
