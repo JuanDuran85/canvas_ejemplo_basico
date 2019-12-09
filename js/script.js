@@ -33,8 +33,9 @@ function colorAlter () {
 
 //funcion para mostrar las cordenadas y canviar de color
 let lugar = (event)=> {
-	$("#xy").text(`El largo de la figura es:${event.pageX} y el ancho es:${event.pageY}`);
-	context.fillStyle = colorAlter();
+	colorFiura = colorAlter();
+	context.fillStyle = colorFiura;
+	$("#xy").text(`El largo de la figura es:${event.pageX} y el ancho es:${event.pageY} y el color es: ${colorFiura}`);
 };
 
 //leyendo el canvas con un click
