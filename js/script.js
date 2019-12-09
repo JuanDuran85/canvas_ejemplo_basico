@@ -4,29 +4,41 @@ let context = canvas.getContext("2d");
 
 //iniciando variables del entorno
 let posicion = 0;
+let tamano1 = 0;
 let tamano2 = 400;
 
-setInterval(function () {
+//Intervalo consecutivo cada n tiempo
+setInterval( () => {
 	context.clearRect(0,0,400,400);
-	context.fillRect(posicion,0,tamano,tamano);
+	context.fillRect(posicion,0,tamano1,tamano2);
 
 	posicion++;
-	tamano--;
+	tamano1++;
+	tamano2--;
 
 	if (posicion>400) {
 		posicion = 0;
-		tamano = 400
+		tamano1 = 0;
+		tamano2 = 400;
 		context.fillStyle = colorAlter();
 	};
-}, 10);
+}, 30);
 
+//funcion que genera numero aleatorio para cargar un color aleatorio del arreglo
 function colorAlter () {
 	let numero = 0;
 	numero = Math.floor(Math.random()*280);
 	console.log(numero);
 	return colores[numero];
-}
+};
 
+let lugar = (event)=> {
+	$("#xy").text(`El largo de la figura es:${event.pageX} y el ancho es:${event.pageY}`);
+};
+
+$("#canvas").click(lugar);
+
+//arreglo con colores en hexadecimal
 colores = ["#63b598", "#ce7d78", "#ea9e70", "#a48a9e", "#c6e1e8", "#648177" ,"#0d5ac1" ,
 "#f205e6" ,"#1c0365" ,"#14a9ad" ,"#4ca2f9" ,"#a4e43f" ,"#d298e2" ,"#6119d0",
 "#d2737d" ,"#c0a43c" ,"#f2510e" ,"#651be6" ,"#79806e" ,"#61da5e" ,"#cd2f00" ,
